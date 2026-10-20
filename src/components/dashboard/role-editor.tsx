@@ -25,12 +25,12 @@ function initialValue(constraint: Constraint): string {
   return Array.isArray(value) ? value.join(",") : typeof value === "string" ? value : "";
 }
 
-export function ConstraintEditor({ constraint, edited, disabled, onApply }: { constraint: Constraint; edited: boolean; disabled: boolean; onApply: (patch: ConstraintPatch) => void }) {
+export function ConstraintEditor({ constraint, edited, disabled, onApply, onDraftChange }: { constraint: Constraint; edited: boolean; disabled: boolean; onApply: (patch: ConstraintPatch) => void; onDraftChange?: (pending: boolean) => void }) {
   const [value, setValue] = useState(initialValue(constraint));
   const salary = constraint.kind === "salary" ? constraint.requirement.value : null;
   const [min, setMin] = useState(salary?.min?.toString() ?? "");
   const [max, setMax] = useState(salary?.max?.toString() ?? "");
-  const [currency, setCurrency] = useState(salary?.currency ?? "USD");
+  const [currency, setCurrency] = useState(salary?.currency ?? "");
   const [openMin, setOpenMin] = useState(salary?.minExplicitlyUnbounded ?? false);
   const [openMax, setOpenMax] = useState(salary?.maxExplicitlyUnbounded ?? false);
   const [error, setError] = useState("");
@@ -44,16 +44,16 @@ export function ConstraintEditor({ constraint, edited, disabled, onApply }: { co
     } satisfies SalaryRange;
     const parsed = constraintPatchSchema.safeParse({ constraintId: constraint.id, kind: constraint.kind, value: nextValue });
     if (!parsed.success) { setError("Enter a valid requirement. Use canonical IDs, a real ISO date, or a salary range with minimum ≤ maximum and a three-letter currency."); return; }
-    try { onApply(parsed.data); setError(""); } catch (error) { setError(error instanceof Error ? error.message : "Requirement could not be applied."); }
+    try { onApply(parsed.data); setError(""); onDraftChange?.(false); } catch (error) { setError(error instanceof Error ? error.message : "Requirement could not be applied."); }
   }
   return <details className="constraint-editor" data-testid={constraint.id}>
     <summary><span>{label}</span><span className="tiny">{edited ? "Edited" : constraint.importance === "mandatory" ? "Required" : "Preferred"}{!constraint.enabled ? " · Off" : ""}</span></summary>
     <fieldset disabled={disabled} aria-label={label}>
       <div className="editor-row"><label>Importance<select value={constraint.importance} onChange={(event) => { try { onApply({ constraintId: constraint.id, kind: constraint.kind, importance: event.target.value as "mandatory" | "preferred" }); setError(""); } catch { setError("Importance change could not be applied."); } }}><option value="mandatory">Mandatory</option><option value="preferred">Preferred</option></select></label><label className="check-label"><input type="checkbox" checked={constraint.enabled} onChange={(event) => { try { onApply({ constraintId: constraint.id, kind: constraint.kind, enabled: event.target.checked }); setError(""); } catch { setError("Cannot enable a requirement with zero weight."); } }} />Enabled</label></div>
-      {constraint.kind === "salary" ? <><div className="editor-row"><label>Minimum<input inputMode="decimal" value={min} disabled={openMin} onChange={(e) => setMin(e.target.value)} /></label><label>Maximum<input inputMode="decimal" value={max} disabled={openMax} onChange={(e) => setMax(e.target.value)} /></label></div><div className="choice-row"><label><input type="checkbox" checked={openMin} onChange={(e) => setOpenMin(e.target.checked)} />No lower bound</label><label><input type="checkbox" checked={openMax} onChange={(e) => setOpenMax(e.target.checked)} />No upper bound</label></div><label>Currency<input value={currency} maxLength={3} onChange={(e) => setCurrency(e.target.value)} /></label></> : <RequirementFields constraint={constraint} value={value} onChange={setValue} />}
+      {constraint.kind === "salary" ? <><div className="editor-row"><label>Minimum<input inputMode="decimal" value={min} disabled={openMin} onChange={(e) => { setMin(e.target.value); onDraftChange?.(true); }} /></label><label>Maximum<input inputMode="decimal" value={max} disabled={openMax} onChange={(e) => { setMax(e.target.value); onDraftChange?.(true); }} /></label></div><div className="choice-row"><label><input type="checkbox" checked={openMin} onChange={(e) => { setOpenMin(e.target.checked); onDraftChange?.(true); }} />No lower bound</label><label><input type="checkbox" checked={openMax} onChange={(e) => { setOpenMax(e.target.checked); onDraftChange?.(true); }} />No upper bound</label></div><label>Currency<input value={currency} maxLength={3} onChange={(e) => { setCurrency(e.target.value); onDraftChange?.(true); }} /></label></> : <RequirementFields constraint={constraint} value={value} onChange={(next) => { setValue(next); onDraftChange?.(true); }} />}
       <button className="small-button" type="button" onClick={applyValue}>Apply requirement</button>
       {error && <p className="field-error" role="alert">{error}</p>}
-      <p className="tiny">{constraint.requirement.origin === "manual" ? "Manual value · no source quote" : "Original source-backed value"}</p>
+      <p className="tiny">{constraint.requirement.origin === "manual" ? "Manual value · no source quote" : constraint.requirement.value === null ? "Unknown value · no source quote" : "Source quote supports value only"}</p>
     </fieldset>
   </details>;
 }

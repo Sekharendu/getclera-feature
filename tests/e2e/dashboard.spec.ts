@@ -51,10 +51,10 @@ test("core mutual-fit story, exact evidence, keyboard dialog, persistence and re
   await expect(page.getByRole("dialog").getByText("The salary ranges do not overlap.").first()).toBeVisible();
   await page.keyboard.press("Escape");
   const changed = await counts(page); await page.reload();
-  await expect(page.getByRole("status")).toContainText("Restored"); expect(await counts(page)).toEqual(changed);
+  await expect(page.getByRole("status", { name: "Local save status" })).toContainText("Restored"); expect(await counts(page)).toEqual(changed);
   await expect(page.getByTestId("candidate-02").locator(".badge")).toHaveText("Eligible");
   await page.getByRole("button", { name: "Reset scenario" }).click(); expect(await counts(page)).toEqual(baseline);
-  await page.reload(); await expect(page.getByRole("status")).toContainText("Restored"); expect(await counts(page)).toEqual(baseline);
+  await page.reload(); await expect(page.getByRole("status", { name: "Local save status" })).toContainText("Restored"); expect(await counts(page)).toEqual(baseline);
   await remote(page);
   await page.getByRole("button", { name: "Clear local data" }).click();
   expect(await counts(page)).toEqual(baseline);
@@ -95,12 +95,12 @@ test("typed controls retain invalid drafts and preserve results; filters and unk
 
 test("corrupt or unsupported saved state recovers visibly; unavailable storage keeps demo usable", async ({ page }) => {
   await page.addInitScript((storageKey) => { if (localStorage.getItem(storageKey) === null) localStorage.setItem(storageKey, '{"schemaVersion":99}'); }, key);
-  await ready(page); await expect(page.getByRole("status")).toContainText("unsupported version"); await expect(page.locator(".candidate-card")).toHaveCount(25);
+  await ready(page); await expect(page.getByRole("status", { name: "Local save status" })).toContainText("unsupported version"); await expect(page.locator(".candidate-card")).toHaveCount(25);
   await page.getByRole("button", { name: "Clear local data" }).click();
   await page.evaluate((storageKey) => localStorage.setItem(storageKey, "{"), key); await page.reload();
-  await expect(page.getByRole("status")).toContainText("could not be read");
+  await expect(page.getByRole("status", { name: "Local save status" })).toContainText("could not be read");
   await page.evaluate(() => { Storage.prototype.setItem = () => { throw Error("quota"); }; });
-  await remote(page); await expect(page.getByRole("status")).toContainText("Could not save locally"); await expect(page.getByTestId("candidate-02").locator(".badge")).toHaveText("Eligible");
+  await remote(page); await expect(page.getByRole("status", { name: "Local save status" })).toContainText("Could not save locally"); await expect(page.getByTestId("candidate-02").locator(".badge")).toHaveText("Eligible");
 });
 
 test("stale saved roles survive recovery, open salary bounds apply, and denied reads preserve demo", async ({ page }) => {
@@ -113,7 +113,7 @@ test("stale saved roles survive recovery, open salary bounds apply, and denied r
     localStorage.setItem(storageKey, JSON.stringify(saved));
   }, key);
   await page.reload();
-  await expect(page.getByRole("status")).toContainText("Saved scenario is stale");
+  await expect(page.getByRole("status", { name: "Local save status" })).toContainText("Saved scenario is stale");
   await expect(page.locator(".role-title")).toHaveText("Retained saved role");
   await expect(page.getByTestId("candidate-02").locator(".badge")).toHaveText("Blocked");
   const salary = await openEditor(page, "role-salary");
@@ -135,9 +135,9 @@ test("stale saved roles survive recovery, open salary bounds apply, and denied r
     Object.defineProperty(window, "localStorage", { configurable: true, get() { throw new Error("denied"); } });
   });
   await page.reload();
-  await expect(page.getByRole("status")).toContainText("Browser storage is unavailable");
+  await expect(page.getByRole("status", { name: "Local save status" })).toContainText("Browser storage is unavailable");
   await expect(page.locator(".candidate-card")).toHaveCount(25);
   await remote(page);
-  await expect(page.getByRole("status")).toContainText("Could not save locally");
+  await expect(page.getByRole("status", { name: "Local save status" })).toContainText("Could not save locally");
   await expect(page.getByTestId("candidate-02").locator(".badge")).toHaveText("Eligible");
 });

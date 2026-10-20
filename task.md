@@ -89,10 +89,11 @@ Status legend: `[x]` complete; `[ ]` pending. Complete tasks only when their acc
 - Estimate: 2–3 hours. Dependencies: T03 and T07.
 
 ### T09 — Add extraction review and confirmation
-- [ ] Let recruiter correct extracted facts and requirement importance before matching.
-- [ ] Track manual edits separately from quoted facts; never fabricate evidence for an override.
-- [ ] Commit confirmed requirements as a new role revision and invalidate stale scenarios.
+- [x] Let recruiter correct extracted facts and requirement importance before matching.
+- [x] Track manual edits separately from quoted facts; never fabricate evidence for an override.
+- [x] Commit confirmed requirements as a new role revision and invalidate stale scenarios.
 - Acceptance: extraction cannot silently alter a live baseline; corrections and their origin are visible.
+- Verification: independent review, lint, typecheck, all 285 tests, production build and 16 browser cases passed (eight desktop; existing mobile run was already underway before user desktop-only steering). Review isolation, manual/editorial provenance, invalid-field guards, atomic revisions/reset/persistence and ignored-abort races verified. Live provider quality NOT RUN without credentials. See `docs/progress/T09.md`.
 - Estimate: 1–2 hours. Dependencies: T08.
 
 ## Phase 5: Evaluation and delivery

@@ -55,11 +55,12 @@ Status legend: `[x]` complete; `[ ]` pending. Complete tasks only when their acc
 - Estimate: 1–2 hours. Dependencies: T04.
 
 ### T06 — Implement scenario recomputation and comparison
-- [ ] Add immutable overrides keyed by constraint ID.
-- [ ] Compare baseline/scenario eligibility, scores, and changed checks.
-- [ ] Support reset and detect edited constraints.
-- [ ] Suggest optional changes only after evaluating them against the loaded sample.
+- [x] Add immutable overrides keyed by constraint ID.
+- [x] Compare baseline/scenario eligibility, scores, and changed checks.
+- [x] Support reset and detect edited constraints.
+- [x] Suggest optional changes only after evaluating them against the loaded sample.
 - Acceptance: removing one blocker never hides another; reset reproduces baseline; published counts match computed results.
+- Verification: independent review, lint, typecheck, all 200 tests across ten files, and production build passed. Scenario checks cover immutable provenance, stale/invalid overrides, reset, comparison transitions/metrics, independently evaluated suggestion counts, and preserved candidate-direction blockers. See `docs/progress/T06.md`.
 - Estimate: 1–2 hours. Dependencies: T05.
 
 ## Phase 3: Interactive product

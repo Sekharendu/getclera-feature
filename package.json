@@ -14,7 +14,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "evaluate": "node scripts/evaluate.mjs"
   },
   "dependencies": {
     "next": "16.4.2",

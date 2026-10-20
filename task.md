@@ -98,13 +98,19 @@ Status legend: `[x]` complete; `[ ]` pending. Complete tasks only when their acc
 
 ## Phase 5: Evaluation and delivery
 
+User scope update: remaining delivery targets desktop web only. Existing responsive
+code/mobile tests are preserved; the T11 mobile-layout criterion below is superseded
+by this preference, not an unperformed check marked complete. Desktop keyboard,
+contrast, functional and production checks remain required.
+
 ### T10 — Evaluate matching and integration behavior
-- [ ] Run at least 15 expected-outcome cases, including mutual-fit conflicts and multiple simultaneous blockers.
-- [ ] Test source validation, stale scenario handling, reset, and persistence migrations.
-- [ ] Add an end-to-end smoke flow: load sample, inspect blocker, change constraint, verify count, reset.
-- [ ] Measure local recomputation with 25 profiles; target under 100 ms in a recorded test environment.
-- [ ] Report expected eligibility agreement, unsupported explanation count, extraction errors, and limitations.
+- [x] Run at least 15 expected-outcome cases, including mutual-fit conflicts and multiple simultaneous blockers.
+- [x] Test source validation, stale scenario handling, reset, and persistence migrations.
+- [x] Add an end-to-end smoke flow: load sample, inspect blocker, change constraint, verify count, reset.
+- [x] Measure local recomputation with 25 profiles; target under 100 ms in a recorded test environment.
+- [x] Report expected eligibility agreement, unsupported explanation count, extraction errors, and limitations.
 - Acceptance: required checks pass; zero unsupported statements in deterministic explanations; failures are documented rather than hidden.
+- Verification: independent review, lint/typecheck, 286 tests, production build, reproducible evaluation and all eight desktop browser cases passed. Independent rerun:25/25 fixture agreement;0 findings across502 explanation checks;72/72 pure/mock extraction cases;25-profile median1.199ms/p952.643ms (100 measured calls). Live provider quality NOT RUN; desktop-only scope applies. See `docs/evaluation/report.md` and `docs/progress/T10.md`.
 - Estimate: 2 hours. Dependencies: T07 and T09.
 
 ### T11 — Polish and package the portfolio demo

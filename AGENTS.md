@@ -27,3 +27,11 @@ attempts, verification evidence, unresolved limitations, and delivery state.
 Never claim exhaustive testing or a successful push without evidence.
 Preserve pre-existing work, serialize edits and Git operations, and read the
 installed Next.js guides before writing application code as required above.
+
+## Delivery scope
+
+The user requested desktop web delivery only. Preserve existing responsive code
+and mobile tests, but do not add mobile work or require mobile runs for remaining
+tasks. Run browser verification with `npm run test:e2e -- --project=desktop`.
+The earlier T11 mobile criterion is superseded by this explicit user preference;
+keyboard navigation, readable contrast and all other verification remain required.

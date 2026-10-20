@@ -109,6 +109,11 @@ configuration before delivery. Never force-push or silently switch the destinati
 
 ## Project-specific verification
 
+Current user scope is desktop web only. Preserve existing responsive code/tests;
+remaining T10/T11 delivery does not require new mobile work or mobile test runs.
+Use `npm run test:e2e -- --project=desktop` for the browser gate. The original T11
+mobile criterion is superseded, not claimed as newly verified or completed.
+
 Use task.md acceptance criteria and description.md as the specification. Preserve
 deterministic matching, both matching directions, unknown-versus-failure semantics,
 exact source spans, immutable baselines, and the fictional-data demo without an AI

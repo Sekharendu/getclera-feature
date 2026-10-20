@@ -46,11 +46,12 @@ Status legend: `[x]` complete; `[ ]` pending. Complete tasks only when their acc
 - Estimate: 2 hours. Dependencies: T03.
 
 ### T05 — Implement eligibility, ranking, and explanations
-- [ ] Aggregate mandatory failures before unknowns before eligibility.
-- [ ] Calculate weighted preferred fit and evidence coverage separately.
-- [ ] Sort by eligibility, then preference score, coverage, and stable candidate ID.
-- [ ] Add deterministic explanation templates and clarification questions.
+- [x] Aggregate mandatory failures before unknowns before eligibility.
+- [x] Calculate weighted preferred fit and evidence coverage separately.
+- [x] Sort by eligibility, then preference score, coverage, and stable candidate ID.
+- [x] Add deterministic explanation templates and clarification questions.
 - Acceptance: repeated inputs produce identical outputs; scores are never presented as hiring probabilities; missing facts remain visible.
+- Verification: independent review, lint, typecheck, all 172 tests across eight files, and production build passed. All 25 hand-authored eligibility expectations agree; checks cover ranking precedence, unknown visibility, exact evidence spans, immutable inputs, null metrics, extreme finite weights, explanation templates, and workflow configuration. See `docs/progress/T05.md` for evidence and limits.
 - Estimate: 1–2 hours. Dependencies: T04.
 
 ### T06 — Implement scenario recomputation and comparison

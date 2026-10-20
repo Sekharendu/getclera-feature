@@ -4,7 +4,7 @@ An independent recruiting prototype that explains mutual candidate-role fit and 
 
 ## Current status
 
-T01 and T02 are implemented: the repository includes design documents, initial domain interfaces, and a runnable Next.js application shell. The homepage describes the planned workflow; candidate fixtures, matching, scenario controls, and AI extraction are not implemented yet.
+T01–T03 are implemented: design documents, a runnable Next.js application shell, Zod domain validation, one fictional role, and 25 fictional profiles with verified source spans. The homepage remains the initial shell; matching, scenario controls, fixture UI, and AI extraction are not implemented yet.
 
 This is an independent portfolio project, not an official Clera product or integration. Initial development uses fictional profiles; no access to Clera's candidate data is assumed.
 
@@ -12,11 +12,13 @@ This is an independent portfolio project, not an official Clera product or integ
 
 - `description.md`: product brief, high-level architecture, low-level design, constraints, and demo flow.
 - `task.md`: ordered development tasks, dependencies, acceptance criteria, and completion status.
-- `src/lib/domain/types.ts`: starting domain contracts.
+- `src/lib/domain/schemas.ts`: runtime domain validation.
+- `src/lib/domain/types.ts`: TypeScript types inferred from the schemas.
+- `docs/evaluation/fixture-cases.md`: hand-authored expected outcomes for the fictional dataset.
 
 ## Stack
 
-Next.js 16 (App Router), React 19, TypeScript 5.9, Tailwind CSS 4 through PostCSS, ESLint 9, and Vitest 5. Exact dependency versions are recorded in `package.json` and `package-lock.json`. The AI provider will be selected in T08.
+Next.js 16 (App Router), React 19, TypeScript 5.9, Tailwind CSS 4 through PostCSS, Zod 4, ESLint 9, and Vitest 5. Exact dependency versions are recorded in `package.json` and `package-lock.json`. The AI provider will be selected in T08.
 
 ## Local setup
 
@@ -38,7 +40,7 @@ npm test
 npm run build
 ```
 
-`typecheck` generates Next.js route types before running TypeScript, so it also works before the first build. `npm test` runs the shell rendering smoke test; matching tests will be added as the engine is implemented. Use `npm run test:watch` for watch mode.
+`typecheck` generates Next.js route types before running TypeScript, so it also works before the first build. `npm test` runs the shell smoke test, domain validation tests, and fixture-loader integration tests; matching tests will be added as the engine is implemented. Use `npm run test:watch` for watch mode.
 
 Dependency note: ESLint 9 is pinned because the React, accessibility, and import plugins bundled by `eslint-config-next` do not yet declare ESLint 10 compatibility. npm reports its deprecation and five high-severity development dependency audit entries through the Next.js lint plugin's `fast-glob` → `micromatch` → `braces` chain. The audit currently offers a Next.js lint-config downgrade rather than a compatible patch; this has not been force-applied. `npm audit --omit=dev` reports no production dependency vulnerabilities at setup time. Recheck these tool dependencies when updating the stack.
 
@@ -53,3 +55,11 @@ To serve the production build, stop the development server, run `npm run build`,
 - `eslint.config.mjs`, `vitest.config.ts`: lint and unit-test configuration.
 
 Runtime setup follows the official [Next.js installation guide](https://nextjs.org/docs/app/getting-started/installation), [Tailwind Next.js guide](https://tailwindcss.com/docs/installation/framework-guides/nextjs), and [Vitest guide](https://vitest.dev/guide/).
+
+## Domain data and fixtures
+
+`loadDemoFixtures()` from `src/lib/domain/fixtures.ts` loads and validates the local JSON demo data. It returns a fresh parsed copy each time. `parseFixtureDataset(unknown)` validates externally supplied fixture bundles and throws a Zod error with field paths for malformed data. Neither function computes matches or contacts a provider.
+
+Validation checks discriminated constraint values, stable unique IDs, directions, positive active weights, real ISO dates, salary ranges, provenance, and exact UTF-16 source spans. Unknown facts use `value: null` with no evidence; a known empty list remains distinct. Manual overrides cannot claim source evidence. Fixture salaries use annual base USD; unspecified bounds remain distinct from explicit open bounds.
+
+The demo JSON and case documentation contain 25 hand-authored expected outcomes for future engine tests: 8 eligible, 9 blocked, and 8 needing clarification. These are expectations rather than computed counts. Exact quote validation establishes source integrity; it does not automatically prove that a structured value follows semantically from a quote. See the [Zod schema API](https://zod.dev/api) for the validation library.

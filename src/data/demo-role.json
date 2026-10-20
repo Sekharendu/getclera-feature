@@ -1,0 +1,165 @@
+{
+  "id": "role-founding-engineer",
+  "title": "Founding Engineer — Fictional Demo",
+  "revision": 1,
+  "sources": [
+    {
+      "id": "role-founding-engineer-source",
+      "kind": "job_description",
+      "text": "FICTIONAL DEMO ROLE — not a live job.\nFounding Engineer at Example Orchard Labs (fictional).\nMust have TypeScript and React skills.\nNode.js experience is preferred.\nAnnual base salary budget: USD 120000 to 180000 inclusive.\nWork policy: office only.\nOffice location: San Francisco, US (us-san-francisco).\nLatest acceptable start date: 2027-01-15, inclusive."
+    }
+  ],
+  "constraints": [
+    {
+      "id": "role-skill-typescript",
+      "kind": "skill",
+      "direction": "employer",
+      "importance": "mandatory",
+      "weight": 1,
+      "enabled": true,
+      "requirement": {
+        "value": "typescript",
+        "evidence": [
+          {
+            "sourceId": "role-founding-engineer-source",
+            "quote": "Must have TypeScript and React skills.",
+            "start": 93,
+            "end": 131
+          }
+        ],
+        "origin": "fixture"
+      }
+    },
+    {
+      "id": "role-skill-react",
+      "kind": "skill",
+      "direction": "employer",
+      "importance": "mandatory",
+      "weight": 1,
+      "enabled": true,
+      "requirement": {
+        "value": "react",
+        "evidence": [
+          {
+            "sourceId": "role-founding-engineer-source",
+            "quote": "Must have TypeScript and React skills.",
+            "start": 93,
+            "end": 131
+          }
+        ],
+        "origin": "fixture"
+      }
+    },
+    {
+      "id": "role-skill-nodejs",
+      "kind": "skill",
+      "direction": "employer",
+      "importance": "preferred",
+      "weight": 2,
+      "enabled": true,
+      "requirement": {
+        "value": "nodejs",
+        "evidence": [
+          {
+            "sourceId": "role-founding-engineer-source",
+            "quote": "Node.js experience is preferred.",
+            "start": 132,
+            "end": 164
+          }
+        ],
+        "origin": "fixture"
+      }
+    },
+    {
+      "id": "role-salary",
+      "kind": "salary",
+      "direction": "employer",
+      "importance": "mandatory",
+      "weight": 1,
+      "enabled": true,
+      "requirement": {
+        "value": {
+          "min": 120000,
+          "max": 180000,
+          "currency": "USD",
+          "basis": "annual_base",
+          "minExplicitlyUnbounded": false,
+          "maxExplicitlyUnbounded": false
+        },
+        "evidence": [
+          {
+            "sourceId": "role-founding-engineer-source",
+            "quote": "Annual base salary budget: USD 120000 to 180000 inclusive.",
+            "start": 165,
+            "end": 223
+          }
+        ],
+        "origin": "fixture"
+      }
+    },
+    {
+      "id": "role-work-mode",
+      "kind": "work_mode",
+      "direction": "employer",
+      "importance": "mandatory",
+      "weight": 1,
+      "enabled": true,
+      "requirement": {
+        "value": [
+          "office"
+        ],
+        "evidence": [
+          {
+            "sourceId": "role-founding-engineer-source",
+            "quote": "Work policy: office only.",
+            "start": 224,
+            "end": 249
+          }
+        ],
+        "origin": "fixture"
+      }
+    },
+    {
+      "id": "role-location",
+      "kind": "location",
+      "direction": "employer",
+      "importance": "mandatory",
+      "weight": 1,
+      "enabled": true,
+      "requirement": {
+        "value": [
+          "us-san-francisco"
+        ],
+        "evidence": [
+          {
+            "sourceId": "role-founding-engineer-source",
+            "quote": "Office location: San Francisco, US (us-san-francisco).",
+            "start": 250,
+            "end": 304
+          }
+        ],
+        "origin": "fixture"
+      }
+    },
+    {
+      "id": "role-latest-start",
+      "kind": "latest_start",
+      "direction": "employer",
+      "importance": "mandatory",
+      "weight": 1,
+      "enabled": true,
+      "requirement": {
+        "value": "2027-01-15",
+        "evidence": [
+          {
+            "sourceId": "role-founding-engineer-source",
+            "quote": "Latest acceptable start date: 2027-01-15, inclusive.",
+            "start": 305,
+            "end": 357
+          }
+        ],
+        "origin": "fixture"
+      }
+    }
+  ]
+}

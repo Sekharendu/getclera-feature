@@ -83,7 +83,7 @@ clera-match-explorer/
       evidence/                   # Quote rendering and highlighting
       ui/                         # Small reusable UI primitives
     lib/
-      domain/types.ts             # Initial shared interfaces
+      domain/types.ts             # Shared types inferred from Zod schemas
       domain/                     # Runtime schemas and validation
       matching/                   # Constraints, eligibility, ranking, explanations
       scenarios/                  # Override application and result comparison
@@ -99,7 +99,7 @@ clera-match-explorer/
     evaluation/                   # Cases, measured results, known limitations
 ```
 
-T01 created documentation, directories, and initial interfaces. T02 adds package files, runtime configuration, the root layout, homepage, global styles, and a shell rendering smoke test. Route handlers, dashboard components, fixture content, and evaluators are added by their assigned tasks; empty directories are preserved with `.gitkeep`.
+T01 created documentation, directories, and initial interfaces. T02 added the runtime and application shell. T03 adds Zod schemas, inferred shared types, a validated fixture loader, one fictional role, 25 fictional profiles, and documented expected outcomes. Route handlers, dashboard components, and evaluators are added by their assigned tasks; empty directories are preserved with `.gitkeep`.
 
 ## 8. Low-level domain design
 
@@ -111,7 +111,7 @@ T01 created documentation, directories, and initial interfaces. T02 adds package
 
 `Role` contains ID, title, revision, source documents, and requirements. `Candidate` contains ID, display name, source documents, skills, salary expectations, work preferences, locations, and availability.
 
-Every requirement has a stable ID, kind, employer/candidate direction, mandatory/preferred importance, nonnegative weight, typed value, and provenance. Implement these as discriminated unions to prevent a salary evaluator receiving a skill string.
+Every requirement has a stable ID, kind, employer/candidate direction, mandatory/preferred importance, typed value, and provenance. Enabled requirements require strictly positive weights; disabled requirements may have zero weight. Zod discriminated unions prevent a salary requirement from receiving a skill string. The fixture loader enforces globally unique record, source, and constraint IDs; IDs are authored in JSON and never derived from list positions at load time.
 
 `MatchResult` includes candidate ID, eligibility, preference score, evidence coverage, and ordered checks. A check contains constraint ID, direction, status, reason code, evidence, and an optional clarification question.
 

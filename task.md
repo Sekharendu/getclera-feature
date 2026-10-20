@@ -26,11 +26,12 @@ Status legend: `[x]` complete; `[ ]` pending. Complete tasks only when their acc
 - Estimate: 1 hour. Dependencies: T01.
 
 ### T03 — Finalize domain validation and fixtures
-- [ ] Turn initial interfaces into validated schemas with stable constraint IDs.
-- [ ] Create one demo role and 25 fictional profiles covering eligible, blocked, and unknown cases.
-- [ ] Include verified source spans, candidate preferences, salaries in one currency, and explicit skills.
-- [ ] Add a fixture loader that rejects malformed records or broken evidence references.
+- [x] Turn initial interfaces into validated schemas with stable constraint IDs.
+- [x] Create one demo role and 25 fictional profiles covering eligible, blocked, and unknown cases.
+- [x] Include verified source spans, candidate preferences, salaries in one currency, and explicit skills.
+- [x] Add a fixture loader that rejects malformed records or broken evidence references.
 - Acceptance: every fixture validates; edge-case scenarios have documented expected outcomes; sample data is clearly fictional.
+- Verification: lint, typecheck, 48 tests across three files, and production build passed. The fixture loader validates all records and exact UTF-16 evidence spans. `docs/evaluation/fixture-cases.md` and `src/data/demo-expectations.json` record 25 hand-authored outcomes for T04–T05; matching is not implemented or evaluated yet.
 - Estimate: 1–2 hours. Dependencies: T02.
 
 ## Phase 2: Matching engine

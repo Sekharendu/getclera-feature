@@ -1,0 +1,127 @@
+[
+  {
+    "candidateId": "candidate-01",
+    "eligibility": "eligible",
+    "reason": "All mandatory checks pass; Node.js is supplied."
+  },
+  {
+    "candidateId": "candidate-02",
+    "eligibility": "blocked",
+    "reason": "Remote-only acceptance conflicts with the office-only role. Enabling remote should remove this work-mode blocker."
+  },
+  {
+    "candidateId": "candidate-03",
+    "eligibility": "blocked",
+    "reason": "Minimum salary exceeds the role budget."
+  },
+  {
+    "candidateId": "candidate-04",
+    "eligibility": "needs_clarification",
+    "reason": "TypeScript is not mentioned; omission is unknown, not rejection."
+  },
+  {
+    "candidateId": "candidate-05",
+    "eligibility": "blocked",
+    "reason": "Explicitly declines React work."
+  },
+  {
+    "candidateId": "candidate-06",
+    "eligibility": "blocked",
+    "reason": "Explicitly accepts only New York office roles."
+  },
+  {
+    "candidateId": "candidate-07",
+    "eligibility": "blocked",
+    "reason": "Earliest start is one day after the deadline."
+  },
+  {
+    "candidateId": "candidate-08",
+    "eligibility": "needs_clarification",
+    "reason": "Salary source omits currency and compensation basis; normalized salary remains unknown."
+  },
+  {
+    "candidateId": "candidate-09",
+    "eligibility": "needs_clarification",
+    "reason": "Accepted work modes are absent."
+  },
+  {
+    "candidateId": "candidate-10",
+    "eligibility": "needs_clarification",
+    "reason": "Accepted locations are absent."
+  },
+  {
+    "candidateId": "candidate-11",
+    "eligibility": "needs_clarification",
+    "reason": "Earliest start date is absent."
+  },
+  {
+    "candidateId": "candidate-12",
+    "eligibility": "eligible",
+    "reason": "Salary intervals meet exactly at USD 180000."
+  },
+  {
+    "candidateId": "candidate-13",
+    "eligibility": "eligible",
+    "reason": "Earliest start equals the deadline."
+  },
+  {
+    "candidateId": "candidate-14",
+    "eligibility": "eligible",
+    "reason": "Salary intervals meet exactly at USD 120000."
+  },
+  {
+    "candidateId": "candidate-15",
+    "eligibility": "blocked",
+    "reason": "Independent work-mode and salary blockers; enabling remote alone must leave salary blocking."
+  },
+  {
+    "candidateId": "candidate-16",
+    "eligibility": "blocked",
+    "reason": "Explicit TypeScript rejection takes precedence over unknown salary."
+  },
+  {
+    "candidateId": "candidate-17",
+    "eligibility": "needs_clarification",
+    "reason": "Confirmed empty skill list is distinct from an absent field; no explicit skill rejection was supplied."
+  },
+  {
+    "candidateId": "candidate-18",
+    "eligibility": "needs_clarification",
+    "reason": "No skills field supplied; mandatory skills are unknown."
+  },
+  {
+    "candidateId": "candidate-19",
+    "eligibility": "blocked",
+    "reason": "Explicitly accepts no work modes; this is an incompatibility, not missing data."
+  },
+  {
+    "candidateId": "candidate-20",
+    "eligibility": "eligible",
+    "reason": "Explicit open upper salary bound overlaps the role budget."
+  },
+  {
+    "candidateId": "candidate-21",
+    "eligibility": "needs_clarification",
+    "reason": "Salary minimum is missing and not explicitly unbounded; do not infer a complete range."
+  },
+  {
+    "candidateId": "candidate-22",
+    "eligibility": "eligible",
+    "reason": "Office is accepted; remote is only a preferred candidate constraint and cannot block eligibility."
+  },
+  {
+    "candidateId": "candidate-23",
+    "eligibility": "eligible",
+    "reason": "Missing preferred Node.js reduces known preference coverage but cannot block eligibility."
+  },
+  {
+    "candidateId": "candidate-24",
+    "eligibility": "eligible",
+    "reason": "Explicitly declined preferred Node.js cannot block mandatory eligibility."
+  },
+  {
+    "candidateId": "candidate-25",
+    "eligibility": "blocked",
+    "reason": "Known location failure takes precedence over unknown React."
+  }
+]

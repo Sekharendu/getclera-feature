@@ -1,0 +1,4183 @@
+[
+  {
+    "id": "candidate-01",
+    "displayName": "Demo Aster",
+    "sources": [
+      {
+        "id": "candidate-01-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 01 — not a real person. 🌱\nDisplay label: Demo Aster.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-01-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 77,
+          "end": 120
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-01-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 121,
+          "end": 154
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-01-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 155,
+          "end": 208
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-01-source",
+          "quote": "Accepted work modes: office.",
+          "start": 209,
+          "end": 237
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-01-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 238,
+          "end": 348
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-01-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 349,
+          "end": 391
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-01-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-01-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 155,
+              "end": 208
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-01-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-01-source",
+              "quote": "Accepted work modes: office.",
+              "start": 209,
+              "end": 237
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-01-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-01-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 238,
+              "end": 348
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-02",
+    "displayName": "Demo Birch",
+    "sources": [
+      {
+        "id": "candidate-02-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 02 — not a real person. 🌱\nDisplay label: Demo Birch.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: remote.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-02-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 77,
+          "end": 120
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-02-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 121,
+          "end": 154
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-02-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 155,
+          "end": 208
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "remote"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-02-source",
+          "quote": "Accepted work modes: remote.",
+          "start": 209,
+          "end": 237
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-02-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 238,
+          "end": 348
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-02-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 349,
+          "end": 391
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-02-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-02-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 155,
+              "end": 208
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-02-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "remote"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-02-source",
+              "quote": "Accepted work modes: remote.",
+              "start": 209,
+              "end": 237
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-02-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-02-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 238,
+              "end": 348
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-03",
+    "displayName": "Demo Cedar",
+    "sources": [
+      {
+        "id": "candidate-03-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 03 — not a real person. 🌱\nDisplay label: Demo Cedar.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 190000 to 220000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-03-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 77,
+          "end": 120
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-03-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 121,
+          "end": 154
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 190000,
+        "max": 220000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-03-source",
+          "quote": "Accepted annual base salary in USD: 190000 to 220000.",
+          "start": 155,
+          "end": 208
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-03-source",
+          "quote": "Accepted work modes: office.",
+          "start": 209,
+          "end": 237
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-03-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 238,
+          "end": 348
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-03-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 349,
+          "end": 391
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-03-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 190000,
+            "max": 220000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-03-source",
+              "quote": "Accepted annual base salary in USD: 190000 to 220000.",
+              "start": 155,
+              "end": 208
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-03-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-03-source",
+              "quote": "Accepted work modes: office.",
+              "start": 209,
+              "end": 237
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-03-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-03-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 238,
+              "end": 348
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-04",
+    "displayName": "Demo Dahlia",
+    "sources": [
+      {
+        "id": "candidate-04-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 04 — not a real person. 🌱\nDisplay label: Demo Dahlia.\nExplicit skills: react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-04-source",
+          "quote": "Explicit skills: react, nodejs.",
+          "start": 78,
+          "end": 109
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-04-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 110,
+          "end": 143
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-04-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 144,
+          "end": 197
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-04-source",
+          "quote": "Accepted work modes: office.",
+          "start": 198,
+          "end": 226
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-04-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 227,
+          "end": 337
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-04-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 338,
+          "end": 380
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-04-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-04-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 144,
+              "end": 197
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-04-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-04-source",
+              "quote": "Accepted work modes: office.",
+              "start": 198,
+              "end": 226
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-04-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-04-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 227,
+              "end": 337
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-05",
+    "displayName": "Demo Elm",
+    "sources": [
+      {
+        "id": "candidate-05-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 05 — not a real person. 🌱\nDisplay label: Demo Elm.\nExplicit skills: typescript, nodejs.\nExplicitly declined skills: react.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-05-source",
+          "quote": "Explicit skills: typescript, nodejs.",
+          "start": 75,
+          "end": 111
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [
+        "react"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-05-source",
+          "quote": "Explicitly declined skills: react.",
+          "start": 112,
+          "end": 146
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-05-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 147,
+          "end": 200
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-05-source",
+          "quote": "Accepted work modes: office.",
+          "start": 201,
+          "end": 229
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-05-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 230,
+          "end": 340
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-05-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 341,
+          "end": 383
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-05-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-05-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 147,
+              "end": 200
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-05-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-05-source",
+              "quote": "Accepted work modes: office.",
+              "start": 201,
+              "end": 229
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-05-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-05-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 230,
+              "end": 340
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-06",
+    "displayName": "Demo Fern",
+    "sources": [
+      {
+        "id": "candidate-06-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 06 — not a real person. 🌱\nDisplay label: Demo Fern.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-new-york. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-06-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 76,
+          "end": 119
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-06-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 120,
+          "end": 153
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-06-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 154,
+          "end": 207
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-06-source",
+          "quote": "Accepted work modes: office.",
+          "start": 208,
+          "end": 236
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-new-york"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-06-source",
+          "quote": "Accepted office locations: us-new-york. These locations remain geographically acceptable for remote work.",
+          "start": 237,
+          "end": 342
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-06-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 343,
+          "end": 385
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-06-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-06-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 154,
+              "end": 207
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-06-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-06-source",
+              "quote": "Accepted work modes: office.",
+              "start": 208,
+              "end": 236
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-06-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-new-york"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-06-source",
+              "quote": "Accepted office locations: us-new-york. These locations remain geographically acceptable for remote work.",
+              "start": 237,
+              "end": 342
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-07",
+    "displayName": "Demo Grove",
+    "sources": [
+      {
+        "id": "candidate-07-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 07 — not a real person. 🌱\nDisplay label: Demo Grove.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-16."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-07-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 77,
+          "end": 120
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-07-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 121,
+          "end": 154
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-07-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 155,
+          "end": 208
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-07-source",
+          "quote": "Accepted work modes: office.",
+          "start": 209,
+          "end": 237
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-07-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 238,
+          "end": 348
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-16",
+      "evidence": [
+        {
+          "sourceId": "candidate-07-source",
+          "quote": "Earliest available start date: 2027-01-16.",
+          "start": 349,
+          "end": 391
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-07-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-07-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 155,
+              "end": 208
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-07-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-07-source",
+              "quote": "Accepted work modes: office.",
+              "start": 209,
+              "end": 237
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-07-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-07-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 238,
+              "end": 348
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-08",
+    "displayName": "Demo Hazel",
+    "sources": [
+      {
+        "id": "candidate-08-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 08 — not a real person. 🌱\nDisplay label: Demo Hazel.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nSalary note: 160000; currency and compensation basis not supplied.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-08-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 77,
+          "end": 120
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-08-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 121,
+          "end": 154
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": null,
+      "evidence": [],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-08-source",
+          "quote": "Accepted work modes: office.",
+          "start": 222,
+          "end": 250
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-08-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 251,
+          "end": 361
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-08-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 362,
+          "end": 404
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-08-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": null,
+          "evidence": [],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-08-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-08-source",
+              "quote": "Accepted work modes: office.",
+              "start": 222,
+              "end": 250
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-08-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-08-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 251,
+              "end": 361
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-09",
+    "displayName": "Demo Iris",
+    "sources": [
+      {
+        "id": "candidate-09-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 09 — not a real person. 🌱\nDisplay label: Demo Iris.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nmodes: not supplied.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-09-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 76,
+          "end": 119
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-09-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 120,
+          "end": 153
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-09-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 154,
+          "end": 207
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": null,
+      "evidence": [],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-09-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 229,
+          "end": 339
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-09-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 340,
+          "end": 382
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-09-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-09-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 154,
+              "end": 207
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-09-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": null,
+          "evidence": [],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-09-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-09-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 229,
+              "end": 339
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-10",
+    "displayName": "Demo Juniper",
+    "sources": [
+      {
+        "id": "candidate-10-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 10 — not a real person. 🌱\nDisplay label: Demo Juniper.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nlocations: not supplied.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-10-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 79,
+          "end": 122
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-10-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 123,
+          "end": 156
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-10-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 157,
+          "end": 210
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-10-source",
+          "quote": "Accepted work modes: office.",
+          "start": 211,
+          "end": 239
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": null,
+      "evidence": [],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-10-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 265,
+          "end": 307
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-10-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-10-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 157,
+              "end": 210
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-10-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-10-source",
+              "quote": "Accepted work modes: office.",
+              "start": 211,
+              "end": 239
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-10-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": null,
+          "evidence": [],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-11",
+    "displayName": "Demo Kestrel",
+    "sources": [
+      {
+        "id": "candidate-11-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 11 — not a real person. 🌱\nDisplay label: Demo Kestrel.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\ndate: not supplied."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-11-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 79,
+          "end": 122
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-11-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 123,
+          "end": 156
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-11-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 157,
+          "end": 210
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-11-source",
+          "quote": "Accepted work modes: office.",
+          "start": 211,
+          "end": 239
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-11-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 240,
+          "end": 350
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": null,
+      "evidence": [],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-11-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-11-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 157,
+              "end": 210
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-11-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-11-source",
+              "quote": "Accepted work modes: office.",
+              "start": 211,
+              "end": 239
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-11-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-11-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 240,
+              "end": 350
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-12",
+    "displayName": "Demo Laurel",
+    "sources": [
+      {
+        "id": "candidate-12-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 12 — not a real person. 🌱\nDisplay label: Demo Laurel.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 180000 to 200000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-12-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 78,
+          "end": 121
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-12-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 122,
+          "end": 155
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 180000,
+        "max": 200000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-12-source",
+          "quote": "Accepted annual base salary in USD: 180000 to 200000.",
+          "start": 156,
+          "end": 209
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-12-source",
+          "quote": "Accepted work modes: office.",
+          "start": 210,
+          "end": 238
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-12-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 239,
+          "end": 349
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-12-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 350,
+          "end": 392
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-12-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 180000,
+            "max": 200000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-12-source",
+              "quote": "Accepted annual base salary in USD: 180000 to 200000.",
+              "start": 156,
+              "end": 209
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-12-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-12-source",
+              "quote": "Accepted work modes: office.",
+              "start": 210,
+              "end": 238
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-12-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-12-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 239,
+              "end": 349
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-13",
+    "displayName": "Demo Maple",
+    "sources": [
+      {
+        "id": "candidate-13-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 13 — not a real person. 🌱\nDisplay label: Demo Maple.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-15."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-13-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 77,
+          "end": 120
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-13-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 121,
+          "end": 154
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-13-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 155,
+          "end": 208
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-13-source",
+          "quote": "Accepted work modes: office.",
+          "start": 209,
+          "end": 237
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-13-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 238,
+          "end": 348
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-15",
+      "evidence": [
+        {
+          "sourceId": "candidate-13-source",
+          "quote": "Earliest available start date: 2027-01-15.",
+          "start": 349,
+          "end": 391
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-13-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-13-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 155,
+              "end": 208
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-13-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-13-source",
+              "quote": "Accepted work modes: office.",
+              "start": 209,
+              "end": 237
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-13-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-13-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 238,
+              "end": 348
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-14",
+    "displayName": "Demo Nettle",
+    "sources": [
+      {
+        "id": "candidate-14-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 14 — not a real person. 🌱\nDisplay label: Demo Nettle.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 110000 to 120000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-14-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 78,
+          "end": 121
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-14-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 122,
+          "end": 155
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 110000,
+        "max": 120000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-14-source",
+          "quote": "Accepted annual base salary in USD: 110000 to 120000.",
+          "start": 156,
+          "end": 209
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-14-source",
+          "quote": "Accepted work modes: office.",
+          "start": 210,
+          "end": 238
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-14-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 239,
+          "end": 349
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-14-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 350,
+          "end": 392
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-14-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 110000,
+            "max": 120000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-14-source",
+              "quote": "Accepted annual base salary in USD: 110000 to 120000.",
+              "start": 156,
+              "end": 209
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-14-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-14-source",
+              "quote": "Accepted work modes: office.",
+              "start": 210,
+              "end": 238
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-14-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-14-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 239,
+              "end": 349
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-15",
+    "displayName": "Demo Oak",
+    "sources": [
+      {
+        "id": "candidate-15-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 15 — not a real person. 🌱\nDisplay label: Demo Oak.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 190000 to 220000.\nAccepted work modes: remote.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-15-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 75,
+          "end": 118
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-15-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 119,
+          "end": 152
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 190000,
+        "max": 220000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-15-source",
+          "quote": "Accepted annual base salary in USD: 190000 to 220000.",
+          "start": 153,
+          "end": 206
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "remote"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-15-source",
+          "quote": "Accepted work modes: remote.",
+          "start": 207,
+          "end": 235
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-15-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 236,
+          "end": 346
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-15-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 347,
+          "end": 389
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-15-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 190000,
+            "max": 220000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-15-source",
+              "quote": "Accepted annual base salary in USD: 190000 to 220000.",
+              "start": 153,
+              "end": 206
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-15-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "remote"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-15-source",
+              "quote": "Accepted work modes: remote.",
+              "start": 207,
+              "end": 235
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-15-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-15-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 236,
+              "end": 346
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-16",
+    "displayName": "Demo Pine",
+    "sources": [
+      {
+        "id": "candidate-16-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 16 — not a real person. 🌱\nDisplay label: Demo Pine.\nExplicit skills: react, nodejs.\nExplicitly declined skills: typescript.\nSalary note: 160000; currency and compensation basis not supplied.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-16-source",
+          "quote": "Explicit skills: react, nodejs.",
+          "start": 76,
+          "end": 107
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [
+        "typescript"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-16-source",
+          "quote": "Explicitly declined skills: typescript.",
+          "start": 108,
+          "end": 147
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": null,
+      "evidence": [],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-16-source",
+          "quote": "Accepted work modes: office.",
+          "start": 215,
+          "end": 243
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-16-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 244,
+          "end": 354
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-16-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 355,
+          "end": 397
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-16-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": null,
+          "evidence": [],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-16-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-16-source",
+              "quote": "Accepted work modes: office.",
+              "start": 215,
+              "end": 243
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-16-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-16-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 244,
+              "end": 354
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-17",
+    "displayName": "Demo Quartz",
+    "sources": [
+      {
+        "id": "candidate-17-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 17 — not a real person. 🌱\nDisplay label: Demo Quartz.\nExplicit skills: confirmed empty list; no skills declared.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-17-source",
+          "quote": "Explicit skills: confirmed empty list; no skills declared.",
+          "start": 78,
+          "end": 136
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-17-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 137,
+          "end": 170
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-17-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 171,
+          "end": 224
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-17-source",
+          "quote": "Accepted work modes: office.",
+          "start": 225,
+          "end": 253
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-17-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 254,
+          "end": 364
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-17-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 365,
+          "end": 407
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-17-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-17-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 171,
+              "end": 224
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-17-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-17-source",
+              "quote": "Accepted work modes: office.",
+              "start": 225,
+              "end": 253
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-17-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-17-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 254,
+              "end": 364
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-18",
+    "displayName": "Demo Reed",
+    "sources": [
+      {
+        "id": "candidate-18-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 18 — not a real person. 🌱\nDisplay label: Demo Reed.\nskills: not supplied.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": null,
+      "evidence": [],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-18-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 98,
+          "end": 131
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-18-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 132,
+          "end": 185
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-18-source",
+          "quote": "Accepted work modes: office.",
+          "start": 186,
+          "end": 214
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-18-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 215,
+          "end": 325
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-18-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 326,
+          "end": 368
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-18-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-18-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 132,
+              "end": 185
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-18-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-18-source",
+              "quote": "Accepted work modes: office.",
+              "start": 186,
+              "end": 214
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-18-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-18-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 215,
+              "end": 325
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-19",
+    "displayName": "Demo Sage",
+    "sources": [
+      {
+        "id": "candidate-19-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 19 — not a real person. 🌱\nDisplay label: Demo Sage.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: none; I explicitly accept no work modes.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-19-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 76,
+          "end": 119
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-19-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 120,
+          "end": 153
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-19-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 154,
+          "end": 207
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-19-source",
+          "quote": "Accepted work modes: none; I explicitly accept no work modes.",
+          "start": 208,
+          "end": 269
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-19-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 270,
+          "end": 380
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-19-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 381,
+          "end": 423
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-19-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-19-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 154,
+              "end": 207
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-19-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [],
+          "evidence": [
+            {
+              "sourceId": "candidate-19-source",
+              "quote": "Accepted work modes: none; I explicitly accept no work modes.",
+              "start": 208,
+              "end": 269
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-19-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-19-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 270,
+              "end": 380
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-20",
+    "displayName": "Demo Thistle",
+    "sources": [
+      {
+        "id": "candidate-20-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 20 — not a real person. 🌱\nDisplay label: Demo Thistle.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 150000 to explicitly no upper limit.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-20-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 79,
+          "end": 122
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-20-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 123,
+          "end": 156
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 150000,
+        "max": null,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": true
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-20-source",
+          "quote": "Accepted annual base salary in USD: 150000 to explicitly no upper limit.",
+          "start": 157,
+          "end": 229
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-20-source",
+          "quote": "Accepted work modes: office.",
+          "start": 230,
+          "end": 258
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-20-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 259,
+          "end": 369
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-20-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 370,
+          "end": 412
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-20-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 150000,
+            "max": null,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": true
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-20-source",
+              "quote": "Accepted annual base salary in USD: 150000 to explicitly no upper limit.",
+              "start": 157,
+              "end": 229
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-20-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-20-source",
+              "quote": "Accepted work modes: office.",
+              "start": 230,
+              "end": 258
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-20-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-20-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 259,
+              "end": 369
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-21",
+    "displayName": "Demo Umber",
+    "sources": [
+      {
+        "id": "candidate-21-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 21 — not a real person. 🌱\nDisplay label: Demo Umber.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: minimum not supplied to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-21-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 77,
+          "end": 120
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-21-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 121,
+          "end": 154
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": null,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-21-source",
+          "quote": "Accepted annual base salary in USD: minimum not supplied to 170000.",
+          "start": 155,
+          "end": 222
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-21-source",
+          "quote": "Accepted work modes: office.",
+          "start": 223,
+          "end": 251
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-21-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 252,
+          "end": 362
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-21-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 363,
+          "end": 405
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-21-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": null,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-21-source",
+              "quote": "Accepted annual base salary in USD: minimum not supplied to 170000.",
+              "start": 155,
+              "end": 222
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-21-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-21-source",
+              "quote": "Accepted work modes: office.",
+              "start": 223,
+              "end": 251
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-21-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-21-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 252,
+              "end": 362
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-22",
+    "displayName": "Demo Violet",
+    "sources": [
+      {
+        "id": "candidate-22-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 22 — not a real person. 🌱\nDisplay label: Demo Violet.\nExplicit skills: typescript, react, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office, remote.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01.\nRemote work is preferred, not mandatory; office work remains acceptable."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-22-source",
+          "quote": "Explicit skills: typescript, react, nodejs.",
+          "start": 78,
+          "end": 121
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-22-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 122,
+          "end": 155
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-22-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 156,
+          "end": 209
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office",
+        "remote"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-22-source",
+          "quote": "Accepted work modes: office, remote.",
+          "start": 210,
+          "end": 246
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-22-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 247,
+          "end": 357
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-22-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 358,
+          "end": 400
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-22-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-22-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 156,
+              "end": 209
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-22-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office",
+            "remote"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-22-source",
+              "quote": "Accepted work modes: office, remote.",
+              "start": 210,
+              "end": 246
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-22-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-22-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 247,
+              "end": 357
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-22-preference-remote",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "preferred",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "remote"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-22-source",
+              "quote": "Remote work is preferred, not mandatory; office work remains acceptable.",
+              "start": 401,
+              "end": 473
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-23",
+    "displayName": "Demo Willow",
+    "sources": [
+      {
+        "id": "candidate-23-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 23 — not a real person. 🌱\nDisplay label: Demo Willow.\nExplicit skills: typescript, react.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-23-source",
+          "quote": "Explicit skills: typescript, react.",
+          "start": 78,
+          "end": 113
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-23-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 114,
+          "end": 147
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-23-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 148,
+          "end": 201
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-23-source",
+          "quote": "Accepted work modes: office.",
+          "start": 202,
+          "end": 230
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-23-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 231,
+          "end": 341
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-23-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 342,
+          "end": 384
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-23-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-23-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 148,
+              "end": 201
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-23-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-23-source",
+              "quote": "Accepted work modes: office.",
+              "start": 202,
+              "end": 230
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-23-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-23-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 231,
+              "end": 341
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-24",
+    "displayName": "Demo Xenia",
+    "sources": [
+      {
+        "id": "candidate-24-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 24 — not a real person. 🌱\nDisplay label: Demo Xenia.\nExplicit skills: typescript, react.\nExplicitly declined skills: nodejs.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "react"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-24-source",
+          "quote": "Explicit skills: typescript, react.",
+          "start": 77,
+          "end": 112
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-24-source",
+          "quote": "Explicitly declined skills: nodejs.",
+          "start": 113,
+          "end": 148
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-24-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 149,
+          "end": 202
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-24-source",
+          "quote": "Accepted work modes: office.",
+          "start": 203,
+          "end": 231
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-san-francisco"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-24-source",
+          "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+          "start": 232,
+          "end": 342
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-24-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 343,
+          "end": 385
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-24-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-24-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 149,
+              "end": 202
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-24-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-24-source",
+              "quote": "Accepted work modes: office.",
+              "start": 203,
+              "end": 231
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-24-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-san-francisco"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-24-source",
+              "quote": "Accepted office locations: us-san-francisco. These locations remain geographically acceptable for remote work.",
+              "start": 232,
+              "end": 342
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "candidate-25",
+    "displayName": "Demo Yarrow",
+    "sources": [
+      {
+        "id": "candidate-25-source",
+        "kind": "candidate_profile",
+        "text": "FICTIONAL DEMO PROFILE 25 — not a real person. 🌱\nDisplay label: Demo Yarrow.\nExplicit skills: typescript, nodejs.\nExplicitly declined skills: none.\nAccepted annual base salary in USD: 130000 to 170000.\nAccepted work modes: office.\nAccepted office locations: us-new-york. These locations remain geographically acceptable for remote work.\nEarliest available start date: 2027-01-01."
+      }
+    ],
+    "skills": {
+      "value": [
+        "typescript",
+        "nodejs"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-25-source",
+          "quote": "Explicit skills: typescript, nodejs.",
+          "start": 78,
+          "end": 114
+        }
+      ],
+      "origin": "fixture"
+    },
+    "explicitlyDeclinedSkills": {
+      "value": [],
+      "evidence": [
+        {
+          "sourceId": "candidate-25-source",
+          "quote": "Explicitly declined skills: none.",
+          "start": 115,
+          "end": 148
+        }
+      ],
+      "origin": "fixture"
+    },
+    "salaryExpectation": {
+      "value": {
+        "min": 130000,
+        "max": 170000,
+        "currency": "USD",
+        "basis": "annual_base",
+        "minExplicitlyUnbounded": false,
+        "maxExplicitlyUnbounded": false
+      },
+      "evidence": [
+        {
+          "sourceId": "candidate-25-source",
+          "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+          "start": 149,
+          "end": 202
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedWorkModes": {
+      "value": [
+        "office"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-25-source",
+          "quote": "Accepted work modes: office.",
+          "start": 203,
+          "end": 231
+        }
+      ],
+      "origin": "fixture"
+    },
+    "acceptedLocations": {
+      "value": [
+        "us-new-york"
+      ],
+      "evidence": [
+        {
+          "sourceId": "candidate-25-source",
+          "quote": "Accepted office locations: us-new-york. These locations remain geographically acceptable for remote work.",
+          "start": 232,
+          "end": 337
+        }
+      ],
+      "origin": "fixture"
+    },
+    "earliestStartDate": {
+      "value": "2027-01-01",
+      "evidence": [
+        {
+          "sourceId": "candidate-25-source",
+          "quote": "Earliest available start date: 2027-01-01.",
+          "start": 338,
+          "end": 380
+        }
+      ],
+      "origin": "fixture"
+    },
+    "preferences": [
+      {
+        "id": "candidate-25-preference-salary",
+        "kind": "salary",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": {
+            "min": 130000,
+            "max": 170000,
+            "currency": "USD",
+            "basis": "annual_base",
+            "minExplicitlyUnbounded": false,
+            "maxExplicitlyUnbounded": false
+          },
+          "evidence": [
+            {
+              "sourceId": "candidate-25-source",
+              "quote": "Accepted annual base salary in USD: 130000 to 170000.",
+              "start": 149,
+              "end": 202
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-25-preference-work_mode",
+        "kind": "work_mode",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "office"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-25-source",
+              "quote": "Accepted work modes: office.",
+              "start": 203,
+              "end": 231
+            }
+          ],
+          "origin": "fixture"
+        }
+      },
+      {
+        "id": "candidate-25-preference-location",
+        "kind": "location",
+        "direction": "candidate",
+        "importance": "mandatory",
+        "weight": 1,
+        "enabled": true,
+        "requirement": {
+          "value": [
+            "us-new-york"
+          ],
+          "evidence": [
+            {
+              "sourceId": "candidate-25-source",
+              "quote": "Accepted office locations: us-new-york. These locations remain geographically acceptable for remote work.",
+              "start": 232,
+              "end": 337
+            }
+          ],
+          "origin": "fixture"
+        }
+      }
+    ]
+  }
+]

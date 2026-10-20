@@ -19,7 +19,7 @@ This is an independent portfolio project, not an official Clera product or integ
 
 ## Stack
 
-Next.js 16 (App Router), React 19, TypeScript 5.9, Tailwind CSS 4 through PostCSS, Zod 4, ESLint 9, Vitest 5 and Playwright. Optional role extraction uses the OpenAI Responses API. Exact dependency versions are recorded in `package.json` and `package-lock.json`.
+Next.js 16 (App Router), React 19, TypeScript 5.9, Tailwind CSS 4 through PostCSS, Zod 4, ESLint 9, Vitest 5 and Playwright. Optional role extraction uses Google's native Gemini generateContent API. Exact dependency versions are recorded in `package.json` and `package-lock.json`.
 
 ## Local setup
 
@@ -37,11 +37,11 @@ Open http://localhost:3000. The complete fictional matching/scenario demo needs 
 Copy `.env.example` to `.env.local` and set both server-only variables:
 
 ```dotenv
-OPENAI_API_KEY=your-server-api-key
-OPENAI_MODEL=your-account-model-supporting-responses-structured-outputs
+GEMINI_API_KEY=your-server-gemini-api-key
+GEMINI_MODEL=your-available-gemini-model-id
 ```
 
-No default model is assumed. Choose an available model that supports strict JSON-schema Structured Outputs, then restart the server. Never prefix these variables with `NEXT_PUBLIC_`, commit `.env.local`, or put keys into browser settings. Without either variable, valid extraction requests return503; the seeded demo stays usable.
+No default model is assumed. Choose an available Gemini model supporting structured JSON output, then restart the server. Use only the plain model ID beginning `gemini-`, not a URL or `models/` prefix. Never prefix these variables with `NEXT_PUBLIC_`, commit `.env.local`, or put keys into browser settings. Missing/invalid Gemini configuration returns503; the seeded demo stays usable. Historical OPENAI variables are ignored: Gemini replaces the previous provider rather than adding a selector.
 
 Use the dashboard's job-description area to request extraction. Failed requests retain your pasted text and current role/scenario. Successful drafts stay isolated from matching and browser storage until you explicitly choose Confirm role. Review warnings and exact source quotes, correct the title or any typed requirement, and apply every pending field edit before confirming. Value corrections become manual facts without source evidence; importance/enabled corrections are editorial changes. Discard leaves the confirmed baseline untouched.
 
@@ -49,11 +49,11 @@ Confirmation creates the next revision of your active role and clears scenario o
 
 `POST /api/extract-role` accepts `application/json` with only `{ "text": "your original description" }`. It returns `{ draftRole, warnings }`, or safe `{ error: { code, message } }`. Drafts are proposed data and require human confirmation. Browser tests intercept success/error responses and exercise the actual no-key503 path; live model quality remains unverified without credentials.
 
-Matching and scenarios run locally in the browser. Requesting extraction sends pasted text to the app server and OpenAI. The adapter requests `store:false`; this is not a promise about provider retention policy. This app does not log raw descriptions or provider errors. Only send descriptions you intend to share with that provider. Before enabling paid extraction on a public deployment, add authentication, rate limiting and spend controls at the deployment edge; this prototype endpoint does not provide those controls.
+Matching and scenarios run locally in the browser. Requesting extraction sends pasted text to the app server and Google Gemini. Provider data use/retention follows your Google service/account terms; this app makes no retention guarantee and does not log raw descriptions/provider errors. Only send descriptions you intend to share with that provider. Before enabling paid extraction on a public deployment, add authentication, rate limiting and spend controls at the deployment edge; this prototype endpoint does not provide those controls.
 
 Limits:20,000 UTF-16 characters,128KiB JSON body,512KiB provider body,30 proposed claims. The request deadline is20seconds, with10seconds per provider attempt and at most one retry for network/429/5xx errors; Retry-After seconds are capped to250ms and remaining budget. No retries for refusals, timeouts, invalid output or authentication failures. Errors:400 malformed/blank/extra fields,413 oversized,415 unsupported content type,503 missing configuration,504 timeout,502 provider/refusal/invalid output; caller cancellation uses499. Responses are no-store, unsupported methods405.
 
-Exact source spans are checked in code, and conservative language rules reject unsupported/negated/ambiguous values. Supported normalization is deliberately limited; unknown facts remain null with warnings. Human review is required: structural/span validation does not prove arbitrary semantic truth. See [extraction decisions](docs/decisions/005-grounded-extraction.md), the official [Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=responses) and [Responses API](https://developers.openai.com/api/reference/resources/responses/methods/create).
+Exact source spans are checked in code, and conservative language rules reject unsupported/negated/ambiguous values. Supported normalization is deliberately limited; unknown facts remain null with warnings. Human review is required: structural/span validation does not prove arbitrary semantic truth. See [current Gemini extraction](docs/decisions/007-gemini-extraction.md), Google's [native structured output](https://ai.google.dev/gemini-api/docs/generate-content/structured-output) and [generateContent reference](https://ai.google.dev/api/generate-content). The provider schema omits unsupported string-length keywords while strict local validation retains every limit; a successful schema response is not a factual guarantee. Live Gemini calls/quality have not been evaluated without credentials.
 
 ## Verification
 

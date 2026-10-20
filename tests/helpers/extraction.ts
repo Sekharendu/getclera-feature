@@ -7,5 +7,5 @@ export function output(claims: ProviderClaim[] = [claim()]): ProviderOutput {
   return { title: { value: null, quote: null, start: null, end: null }, claims, unsupportedFields: [] };
 }
 export function completion(value: unknown = output()): Response {
-  return Response.json({ status: "completed", output: [{ type: "message", content: [{ type: "output_text", text: JSON.stringify(value) }] }] });
+  return Response.json({ candidates: [{ finishReason: "STOP", content: { role: "model", parts: [{ text: JSON.stringify(value) }] } }] });
 }

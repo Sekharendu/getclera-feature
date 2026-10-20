@@ -1,5 +1,10 @@
 # Grounded proposed role extraction
 
+Provider-history note: transport/configuration names below record the original
+T08 OpenAI implementation. T12 replaced that transport with Gemini; see
+[current Gemini extraction](007-gemini-extraction.md). The grounding/domain rules
+and human-review requirements described here remain applicable.
+
 The production boundary is `src/lib/extraction/server.ts` with `import "server-only"`;
 only it reads OPENAI_API_KEY/OPENAI_MODEL. The Node route delegates to a testable
 handler. Factories/pure contracts import no environment secrets. Dashboard imports

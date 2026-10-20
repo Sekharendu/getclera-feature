@@ -12,7 +12,7 @@ export type ExtractionSuccess = z.infer<typeof extractionSuccessSchema>;
 const span = { quote: z.string().max(2000).nullable(), start: z.number().int().nonnegative().nullable(), end: z.number().int().nonnegative().nullable() };
 const claim = { ...span, importance: z.enum(["mandatory", "preferred"]), importanceExplicit: z.boolean() };
 const salary = z.strictObject({ min: z.number().nullable(), max: z.number().nullable(), currency: z.string().max(3).nullable(), basis: z.string().max(30).nullable(), minExplicitlyUnbounded: z.boolean(), maxExplicitlyUnbounded: z.boolean() });
-/** All keys required; optional information is explicitly null for strict Structured Outputs. */
+/** All keys required; unknown information is explicitly null and validated locally. */
 export const providerOutputSchema = z.strictObject({
   title: z.strictObject({ value: z.string().max(160).nullable(), ...span }),
   claims: z.array(z.discriminatedUnion("kind", [
@@ -26,13 +26,21 @@ export const providerOutputSchema = z.strictObject({
 });
 export type ProviderOutput = z.infer<typeof providerOutputSchema>;
 export type ProviderClaim = ProviderOutput["claims"][number];
-/** Zod discriminated unions emit oneOf/const; disjoint kind enums permit supported anyOf. */
-function structuredSchema(value: unknown): unknown {
-  if (Array.isArray(value)) return value.map(structuredSchema);
-  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).filter(([key]) => key !== "$schema").map(([key, item]) => [key === "oneOf" ? "anyOf" : key === "const" ? "enum" : key, key === "const" ? [item] : structuredSchema(item)]));
-  return value;
+/** Emit Google's documented JSON-schema subset; Zod retains all runtime limits. */
+function geminiSchema(value: unknown): unknown {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return value;
+  const allowed = new Set(["type", "title", "description", "enum", "required", "additionalProperties", "minimum", "maximum", "minItems", "maxItems", "format"]);
+  const result: Record<string, unknown> = {};
+  for (const [key, item] of Object.entries(value)) {
+    if (key === "properties") result.properties = Object.fromEntries(Object.entries(item as Record<string, unknown>).map(([name, schema]) => [name, geminiSchema(schema)]));
+    else if (key === "items") result.items = geminiSchema(item);
+    else if ((key === "anyOf" || key === "oneOf") && Array.isArray(item)) result.anyOf = item.map(geminiSchema);
+    else if (key === "const") result.enum = [item];
+    else if (allowed.has(key)) result[key] = item;
+  }
+  return result;
 }
-export const providerJsonSchema = structuredSchema(z.toJSONSchema(providerOutputSchema));
+export const geminiJsonSchema = geminiSchema(z.toJSONSchema(providerOutputSchema));
 
 export class ExtractionError extends Error {
   constructor(public readonly code: "not_configured" | "timeout" | "cancelled" | "provider_error" | "invalid_output" | "refused", public readonly status: number) {

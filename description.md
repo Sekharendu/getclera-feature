@@ -57,7 +57,7 @@ The AI does not make eligibility decisions. Matching remains usable with no API 
 - TypeScript: shared domain types across server and browser.
 - Tailwind CSS: consistent responsive layout.
 - Runtime schemas: validate API input/output, storage, and fixtures; choose the schema library during initialization.
-- Structured-output AI provider: job-description parsing only in the MVP; secrets remain server-side.
+- Google Gemini native structured-output extraction: job-description parsing only; GEMINI_API_KEY/GEMINI_MODEL remain server-side. Draft validation, grounding and explicit review are required. See docs/decisions/007-gemini-extraction.md for current protocol and limits.
 - Vitest: constraint, scoring, evidence, and scenario tests.
 - Browser end-to-end runner: one critical demo flow during verification.
 

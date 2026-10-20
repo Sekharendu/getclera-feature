@@ -10,5 +10,5 @@ export default defineConfig({
   reporter: "list",
   use: { baseURL: "http://127.0.0.1:3107", trace: "retain-on-failure", launchOptions: { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH ?? (existsSync(chrome) ? chrome : undefined) } },
   projects: [{ name: "desktop", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 1000 } } }, { name: "mobile", use: { ...devices["Desktop Chrome"], viewport: { width: 390, height: 844 } } }],
-  webServer: { command: "npm run start -- --hostname 127.0.0.1 --port 3107", url: "http://127.0.0.1:3107", reuseExistingServer: false, timeout: 60000, env: { OPENAI_API_KEY: "", OPENAI_MODEL: "" } },
+  webServer: { command: "npm run start -- --hostname 127.0.0.1 --port 3107", url: "http://127.0.0.1:3107", reuseExistingServer: false, timeout: 60000, env: { GEMINI_API_KEY: "", GEMINI_MODEL: "", OPENAI_API_KEY: "legacy-test-sentinel-not-a-key", OPENAI_MODEL: "legacy-model-must-not-enable-extraction" } },
 });

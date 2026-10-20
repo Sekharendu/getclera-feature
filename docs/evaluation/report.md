@@ -1,7 +1,8 @@
 # Observed evaluation — fictional desktop demo
 
-Recorded2026-10-20T15:17:37.747Z using `npm run evaluate` at the T09 baseline
-`3e04e2172cff5b0687451a117cbf4a2965ab8a54` plus this evaluation change.
+Recorded2026-10-20T19:56:30.800Z (21October in Asia/Kolkata) using `npm run evaluate`
+at the T11 baseline `e27b4b6c51de143db13f6a02faafed3483487406` plus T12's Gemini
+replacement. The previous T10 observation remains recorded in docs/progress/T10.md.
 This measures consistency on invented data, not hiring performance or live model
 accuracy. Artifacts are local and gitignored: `artifacts/evaluation/report.json`
 contains observations/environment/raw timings/case names; `tests.json` is the
@@ -44,28 +45,30 @@ probabilities; coverage measures known outcomes, including failures/manual facts
 ## Extraction contract errors, with explicit denominators
 
 The same evaluation command executes existing mock/pure extraction suites and
-records every named result.**72/72 test cases passed;0 incorrect-handling test
-failures;0 live provider requests.** Some cases contain multiple inputs/assertions,
+records every named result.**99/99 test cases passed;0 incorrect-handling test
+failures;0 live Gemini requests.** Some cases contain multiple inputs/assertions,
 so this denominator is test cases, not claims, HTTP requests or live accuracy.
 
 | Existing suite | Executed cases | Passed | Handling failures |
 | --- | ---: | ---: | ---: |
 | Grounding | 40 | 40 | 0 |
-| Provider adapter with fake fetch | 18 | 18 | 0 |
+| Native Gemini adapter with fake fetch | 45 | 45 | 0 |
 | HTTP handler with injected extraction | 14 | 14 | 0 |
 
 Grounding cases include valid typed drafts and exact UTF-16 spans, plus deliberately
 unsupported/repeated/missing/negated/excluded/signed/decimal/unit inputs that must
-become unknown or raise a safe validation error. Provider cases include completed
-output, refusals/incomplete/malformed output, auth errors, retry caps, cancellation,
+become unknown or raise a safe validation error. Gemini cases include native STOP
+output/thought handling/multipart policy, blocked prompts/safety/refusals,
+truncated/malformed/multiple candidates/tools, full emitted-schema subset and
+runtime bounds, strict model URL/header validation, auth errors, retry caps, cancellation,
 body/transport timeouts and bounded invalid bodies. Handler cases cover safe
 400/413/415/499/502/503/504 behavior and preserved original text. Intentional
 rejections/provider errors are expected outcomes: zero handling failures does
 **not** mean zero extraction errors or perfect extraction quality.
 
-No credentials were used and live extraction quality/access/latency is **NOT RUN**.
+No credentials were used and live Gemini quality/access/latency is **NOT RUN**.
 Desktop browser checks additionally exercise actual no-key503, mocked UI failure
-preservation and explicit review/confirmation. They are not counted in72 above.
+preservation and explicit review/confirmation. They are not counted in99 above.
 
 ## Local recomputation timing
 
@@ -78,7 +81,7 @@ produced:
 
 | Median | Nearest-rank p95 | Maximum | Target rule |
 | ---: | ---: | ---: | --- |
-| 1.470ms | 3.509ms | 5.823ms | Median and p95 both below100ms: PASS |
+| 1.706ms | 3.478ms | 4.762ms | Median and p95 both below100ms: PASS |
 
 `performance.now()` times role cloning/validation/override application, all checks,
 aggregation and ranking. Fixture loading, output-equality checks, artifact IO and

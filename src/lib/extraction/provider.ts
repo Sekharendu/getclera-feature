@@ -1,6 +1,6 @@
-import { ExtractionError, providerJsonSchema, providerOutputSchema, type ProviderOutput } from "./contracts";
+import { ExtractionError, geminiJsonSchema, providerOutputSchema, type ProviderOutput } from "./contracts";
 
-export const PROVIDER_URL = "https://api.openai.com/v1/responses";
+export const PROVIDER_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/";
 export const ATTEMPT_TIMEOUT_MS = 10_000;
 export const TOTAL_TIMEOUT_MS = 20_000;
 export const MAX_PROVIDER_BYTES = 512 * 1024;
@@ -45,26 +45,44 @@ export async function readBoundedBody(response: Response, maximum: number, signa
 }
 
 function parsedOutput(input: unknown): ProviderOutput {
-  if (!input || typeof input !== "object") throw new ExtractionError("invalid_output", 502);
-  const envelope = input as { status?: unknown; output?: unknown };
-  if (envelope.status !== "completed" || !Array.isArray(envelope.output)) throw new ExtractionError("invalid_output", 502);
-  const text: string[] = [];
-  for (const item of envelope.output) {
-    if (!item || typeof item !== "object" || item.type !== "message" || !Array.isArray(item.content)) continue;
-    for (const content of item.content) {
-      if (content?.type === "refusal") throw new ExtractionError("refused", 502);
-      if (content?.type === "output_text" && typeof content.text === "string") text.push(content.text);
-    }
+  const record = (value: unknown): Record<string, unknown> | null => value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : null;
+  const invalid = () => new ExtractionError("invalid_output", 502);
+  const envelope = record(input);
+  if (!envelope || envelope.error !== undefined) throw invalid();
+  if (envelope.promptFeedback !== undefined) {
+    const feedback = record(envelope.promptFeedback);
+    if (!feedback || (feedback.blockReason !== undefined && typeof feedback.blockReason !== "string")) throw invalid();
+    if (feedback.blockReason && feedback.blockReason !== "BLOCK_REASON_UNSPECIFIED") throw new ExtractionError("refused", 502);
   }
-  if (text.length !== 1) throw new ExtractionError("invalid_output", 502);
-  try { return providerOutputSchema.parse(JSON.parse(text[0])); } catch { throw new ExtractionError("invalid_output", 502); }
+  if (!Array.isArray(envelope.candidates) || envelope.candidates.length !== 1) throw invalid();
+  const candidate = record(envelope.candidates[0]);
+  if (!candidate) throw invalid();
+  const refusalReasons = new Set(["SAFETY", "RECITATION", "BLOCKLIST", "PROHIBITED_CONTENT", "SPII", "IMAGE_SAFETY", "IMAGE_PROHIBITED_CONTENT", "IMAGE_RECITATION"]);
+  if (typeof candidate.finishReason === "string" && refusalReasons.has(candidate.finishReason)) throw new ExtractionError("refused", 502);
+  if (candidate.safetyRatings !== undefined) {
+    if (!Array.isArray(candidate.safetyRatings) || candidate.safetyRatings.some((rating) => !record(rating) || (record(rating)!.blocked !== undefined && typeof record(rating)!.blocked !== "boolean"))) throw invalid();
+    if (candidate.safetyRatings.some((rating) => record(rating)?.blocked === true)) throw new ExtractionError("refused", 502);
+  }
+  if (candidate.finishReason !== "STOP") throw invalid();
+  const content = record(candidate.content);
+  if (!content || (content.role !== undefined && content.role !== "model") || !Array.isArray(content.parts)) throw invalid();
+  const text: string[] = [];
+  for (const item of content.parts) {
+    const part = record(item);
+    if (!part || Object.keys(part).some((key) => !["text", "thought", "thoughtSignature"].includes(key)) || typeof part.text !== "string" || (part.thought !== undefined && typeof part.thought !== "boolean") || (part.thoughtSignature !== undefined && typeof part.thoughtSignature !== "string")) throw invalid();
+    if (part.thought !== true) text.push(part.text);
+  }
+  const finalText = text.join("");
+  if (!finalText.trim()) throw invalid();
+  try { return providerOutputSchema.parse(JSON.parse(finalText)); } catch { throw invalid(); }
 }
 
 export function createProvider(config: ProviderConfig, dependencies: ProviderDependencies = {}) {
   const fetcher = dependencies.fetch ?? fetch;
   const now = dependencies.now ?? Date.now;
   return async function extract(text: string, callerSignal?: AbortSignal): Promise<ProviderOutput> {
-    if (!config.apiKey.trim() || !config.model.trim()) throw new ExtractionError("not_configured", 503);
+    if (!config.apiKey.trim() || config.model !== config.model.trim() || config.model.length > 120 || !/^gemini-[a-z0-9]+(?:[.-][a-z0-9]+)*$/.test(config.model)) throw new ExtractionError("not_configured", 503);
+    const providerUrl = `${PROVIDER_BASE_URL}${encodeURIComponent(config.model)}:generateContent`;
     const started = now();
     const total = new AbortController();
     const totalTimer = setTimeout(() => total.abort(), TOTAL_TIMEOUT_MS);
@@ -92,7 +110,7 @@ export function createProvider(config: ProviderConfig, dependencies: ProviderDep
           });
           let response: Response;
           try {
-            response = await Promise.race([fetcher(PROVIDER_URL, { method: "POST", signal: controller.signal, headers: { Authorization: `Bearer ${config.apiKey}`, "Content-Type": "application/json" }, body: JSON.stringify({ model: config.model, store: false, instructions, input: [{ role: "user", content: [{ type: "input_text", text }] }], text: { format: { type: "json_schema", name: "role_extraction", strict: true, schema: providerJsonSchema } }, max_output_tokens: 6000 }) }), cancellation]);
+            response = await Promise.race([fetcher(providerUrl, { method: "POST", signal: controller.signal, headers: { "x-goog-api-key": config.apiKey, "Content-Type": "application/json" }, body: JSON.stringify({ systemInstruction: { parts: [{ text: instructions }] }, contents: [{ role: "user", parts: [{ text }] }], generationConfig: { candidateCount: 1, maxOutputTokens: 6000, responseFormat: { text: { mimeType: "APPLICATION_JSON", schema: geminiJsonSchema } } } }) }), cancellation]);
             if (total.signal.aborted || now() - started >= TOTAL_TIMEOUT_MS) throw new ExtractionError("timeout", 504);
             if (!response.ok) {
               void response.body?.cancel().catch(() => {});

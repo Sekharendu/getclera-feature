@@ -1,5 +1,9 @@
 # Isolated extraction review and explicit role confirmation
 
+Provider-history note: the review architecture remains current; any OpenAI name
+below refers to the original T09 transport. T12's replacement uses
+[Gemini](007-gemini-extraction.md) without changing review/confirmation contracts.
+
 `src/lib/extraction/review.ts` creates a detached review from validated success and
 active role identity. The review retains original draft/warnings, editable draft,
 session generation, active role ID/revision and separate editorial metadata.

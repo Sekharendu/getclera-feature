@@ -123,6 +123,16 @@ contrast, functional and production checks remain required.
 - Verification: independent final review, lint/typecheck, all 286 tests, production build, evaluation and nine desktop browser cases passed. All23 representative computed text pairs meet targets (small-text minimum4.65:1); textarea focus4.53:1. README commands/architecture and75second demo verified; desktop screenshot inspected. Targeted evidence is not exhaustive accessibility certification. Live provider quality NOT RUN. See `docs/progress/T11.md`.
 - Estimate: 1–2 hours. Dependencies: T10.
 
+## Follow-up development
+
+### T12 — Replace OpenAI extraction with Gemini
+- [x] Replace the server-only provider with Gemini native structured extraction and GEMINI_API_KEY/GEMINI_MODEL configuration; remove the active OpenAI path.
+- [x] Preserve grounded draft/review contract, bounded transport, safe errors, and keyless fictional demo.
+- [x] Update current setup/privacy documentation, provider mocks, schema/wire assertions, and desktop route verification.
+- Acceptance: required workflow checks pass; native Gemini protocol and secret boundaries verified; no unsupported claims of live-provider quality. See `docs/progress/T12.md` for plan and evidence.
+- Verification: independent native protocol/schema/security review, lint/typecheck,313tests, production build,99case mock evaluation and nine desktop browser cases passed. Actual no-Gemini route remains503 despite legacy-only config; seeded demo intact. Live Gemini availability/quality/latency NOT RUN; no paid requests. See `docs/progress/T12.md`.
+- Dependencies: T11. Status: verified / delivery pending.
+
 ## Deferred work
 
 Real Clera MCP integration, authentication, production hosting, database persistence, resume ingestion, automated outreach, multiple currencies, commute calculations, and production candidate data. Each requires its own scoped follow-up. No messages or introductions are sent by this prototype.

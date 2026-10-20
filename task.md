@@ -114,12 +114,13 @@ contrast, functional and production checks remain required.
 - Estimate: 2 hours. Dependencies: T07 and T09.
 
 ### T11 — Polish and package the portfolio demo
-- [ ] Add concise product copy, sample-data labels, and independent-project notice.
-- [ ] Verify keyboard navigation, readable contrast, and mobile layout.
-- [ ] Update README with actual setup commands and architecture choices.
-- [ ] Prepare a 60–90 second demo script and a short evaluation report.
-- [ ] Run final lint, typecheck, tests, and production build.
+- [x] Add concise product copy, sample-data labels, and independent-project notice.
+- [x] Verify keyboard navigation, readable contrast, and desktop layout (mobile criterion superseded by user scope).
+- [x] Update README with actual setup commands and architecture choices.
+- [x] Prepare a 60–90 second demo script and a short evaluation report.
+- [x] Run final lint, typecheck, tests, and production build.
 - Acceptance: another developer can run the project; a reviewer can understand the value in one minute.
+- Verification: independent final review, lint/typecheck, all 286 tests, production build, evaluation and nine desktop browser cases passed. All23 representative computed text pairs meet targets (small-text minimum4.65:1); textarea focus4.53:1. README commands/architecture and75second demo verified; desktop screenshot inspected. Targeted evidence is not exhaustive accessibility certification. Live provider quality NOT RUN. See `docs/progress/T11.md`.
 - Estimate: 1–2 hours. Dependencies: T10.
 
 ## Deferred work

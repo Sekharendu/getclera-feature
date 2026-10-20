@@ -4,9 +4,9 @@ An independent recruiting prototype that explains mutual candidate-role fit and 
 
 ## Current status
 
-T01–T04 are implemented: design documents, a runnable Next.js application shell, validated fictional fixtures, and individual constraint evaluators in both matching directions. The homepage remains the initial shell; eligibility aggregation, ranking, scenario controls, fixture UI, and AI extraction are not implemented yet.
+The desktop demo includes25 fictional profiles, mutual requirement checks, eligibility/ranking, immutable scenarios, exact source evidence, safe local persistence and optional extraction with explicit review/confirmation. Baseline results are8eligible,9blocked and8needing clarification. Adding remote alongside office makes candidate02 eligible while candidate15 remains salary-blocked.
 
-This is an independent portfolio project, not an official Clera product or integration. Initial development uses fictional profiles; no access to Clera's candidate data is assumed.
+This is an independent portfolio project, not an official Clera product or integration. No real candidate data is used. Follow the [75-second demo](docs/demo-script.md) or inspect the [observed evaluation](docs/evaluation/report.md) and [desktop accessibility notes](docs/evaluation/desktop-accessibility.md). Live provider quality has not been evaluated without credentials.
 
 ## Start here
 
@@ -62,18 +62,29 @@ npm run lint
 npm run typecheck
 npm test
 npm run build
+npm run evaluate
+npm run test:e2e -- --project=desktop
 ```
 
-`typecheck` generates Next.js route types before running TypeScript, so it also works before the first build. `npm test` runs the shell smoke test, domain validation, fixture loading, individual comparisons, and constraint-evaluation integration tests. Use `npm run test:watch` for watch mode.
+`typecheck` generates Next.js route types before running TypeScript. Unit/integration tests cover domain/source validation, matching/scenarios, persistence, extraction transport/grounding and review/confirmation. `evaluate` writes ignored JSON artifacts with25 independent expected outcomes, bounded explanation audit, mock extraction handling and25-profile recomputation timing; it never rewrites the tracked report. Use `npm run test:watch` for watch mode.
 
-Dependency note: ESLint 9 is pinned because the React, accessibility, and import plugins bundled by `eslint-config-next` do not yet declare ESLint 10 compatibility. npm reports its deprecation and five high-severity development dependency audit entries through the Next.js lint plugin's `fast-glob` → `micromatch` → `braces` chain. The audit currently offers a Next.js lint-config downgrade rather than a compatible patch; this has not been force-applied. `npm audit --omit=dev` reports no production dependency vulnerabilities at setup time. Recheck these tool dependencies when updating the stack.
+Build before Playwright; its production server uses isolated port3107 with provider configuration disabled. The installed Windows Chrome is used when present; otherwise install the managed browser with `npx playwright install chromium`. `PLAYWRIGHT_EXECUTABLE_PATH` can select another compatible browser. Current delivery targets desktop; existing responsive code/mobile tests remain available but are not the required gate.
+
+Dependency note (initial setup observation, not a current audit): ESLint9 was pinned for bundled plugin compatibility; setup reported development-tool audit entries. No force downgrade was applied. Re-run `npm audit` when updating dependencies rather than treating that dated observation as a current security assessment.
 
 To serve the production build, stop the development server, run `npm run build`, then `npm start`. Both servers use port 3000 by default. To use another port, append `-- --port 3001` to the server command.
 
 ## Runtime structure
 
 - `src/app/layout.tsx`: root document, metadata, and keyboard skip link.
-- `src/app/page.tsx`: initial homepage and development status.
+- `src/app/page.tsx`: server entry passing validated fictional fixtures to the client dashboard.
+- `src/components/dashboard/`: role/scenario controls, ranked cards, exact-evidence detail dialog and isolated extraction review.
+- `src/lib/matching/`: pure three-state checks, mandatory aggregation, weighted preferred fit/known-outcome coverage and deterministic explanations.
+- `src/lib/scenarios/`: immutable overrides, reset/comparison and evaluated optional trade-offs.
+- `src/lib/storage/`: version1 role/scenario envelope; safe corrupt/stale/unavailable recovery.
+- `src/lib/extraction/`: browser-safe contracts/review helpers, conservative grounding and injectable bounded provider/HTTP factories; server-only environment boundary.
+- `src/app/api/extract-role/route.ts`: Node POST endpoint; drafts never automatically change the baseline.
+- `tests/`, `scripts/evaluate.mjs`: unit/integration, desktop browser checks and reproducible evaluation.
 - `src/app/globals.css`: Tailwind entry point and global styles; system fonts avoid build-time font downloads.
 - `next.config.ts`, `tsconfig.json`, `postcss.config.mjs`: application, type, and styling configuration.
 - `eslint.config.mjs`, `vitest.config.ts`: lint and unit-test configuration.
@@ -86,10 +97,10 @@ Runtime setup follows the official [Next.js installation guide](https://nextjs.o
 
 Validation checks discriminated constraint values, stable unique IDs, directions, positive active weights, real ISO dates, salary ranges, provenance, and exact UTF-16 source spans. Unknown facts use `value: null` with no evidence; a known empty list remains distinct. Manual overrides cannot claim source evidence. Fixture salaries use annual base USD; unspecified bounds remain distinct from explicit open bounds.
 
-The demo JSON and case documentation contain 25 hand-authored expected outcomes for future engine tests: 8 eligible, 9 blocked, and 8 needing clarification. These are expectations rather than computed counts. Exact quote validation establishes source integrity; it does not automatically prove that a structured value follows semantically from a quote. See the [Zod schema API](https://zod.dev/api) for the validation library.
+The demo JSON and case documentation contain25 hand-authored expected outcomes, independently compared with computed matching:25/25 agreement in the recorded evaluation. Exact quote validation establishes source integrity; it does not automatically prove arbitrary semantic entailment. Scores are rule-based comparisons, not hiring probabilities. See [fixture expectations](docs/evaluation/fixture-cases.md) and [domain schemas](src/lib/domain/schemas.ts).
 
 ## Individual matching checks
 
 `evaluateConstraints(role, candidate)` from `src/lib/matching/evaluate.ts` returns ordered employer and candidate checks for validated records. Each check contains pass/fail/unknown, a reason code, source-span references, and a clarification question when unknown. Disabled checks are omitted. The functions do not access a model, network, storage, or current time, and do not mutate their inputs.
 
-Skills, annual salary intervals, work modes, canonical locations, and employer start deadlines are supported. Hybrid-only compatibility and facts the current role model cannot establish remain unknown. Work-mode compatibility never bypasses separate geographic checks. See `docs/decisions/001-constraint-evaluation.md` for exact aliases, candidate-direction rules, and the offered-start-date limitation. Eligibility, scoring, ranking, and explanation templates are T05 work.
+Skills, annual salary intervals, work modes, canonical locations, and employer start deadlines are supported. Hybrid-only compatibility and facts the current role model cannot establish remain unknown. Work-mode compatibility never bypasses geography. Mandatory failures block before unknowns; preferred misses never block. Ranking uses eligibility, preferred fit, known-outcome coverage, then candidate ID. Review [evaluation rules](docs/decisions/001-constraint-evaluation.md), [aggregation](docs/decisions/002-match-aggregation.md), [scenarios](docs/decisions/003-scenarios.md), [local state](docs/decisions/004-dashboard-and-local-state.md) and [explicit confirmation](docs/decisions/006-extraction-review.md).

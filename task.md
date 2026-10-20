@@ -66,12 +66,13 @@ Status legend: `[x]` complete; `[ ]` pending. Complete tasks only when their acc
 ## Phase 3: Interactive product
 
 ### T07 — Build the dashboard and candidate detail experience
-- [ ] Build role editor, scenario controls, candidate cards, filters, and baseline/scenario summary.
-- [ ] Add detail drawer with separate employer and candidate checks.
-- [ ] Add exact source highlighting and unanswered-question prompts.
-- [ ] Implement empty, loading, and validation states; keyboard controls; responsive layouts.
-- [ ] Persist confirmed role and scenario locally using a versioned storage envelope and reset option.
+- [x] Build role editor, scenario controls, candidate cards, filters, and baseline/scenario summary.
+- [x] Add detail drawer with separate employer and candidate checks.
+- [x] Add exact source highlighting and unanswered-question prompts.
+- [x] Implement empty, loading, and validation states; keyboard controls; responsive layouts.
+- [x] Persist confirmed role and scenario locally using a versioned storage envelope and reset option.
 - Acceptance: entire seeded demo works without an AI key; controls update results immediately; narrow screens remain usable.
+- Verification: independent code/UI review, lint, typecheck, all 210 unit/integration tests, production build and eight desktop/mobile Playwright cases passed. Real browser checks cover mutual blockers, exact evidence, all typed controls, validation, keyboard modal behavior, persistence recovery/reset/clear, empty filters and 390px overflow. Desktop/mobile screenshots inspected. See `docs/progress/T07.md` for evidence and coverage limits.
 - Estimate: 3–4 hours. Dependencies: T06.
 
 ## Phase 4: AI-assisted input

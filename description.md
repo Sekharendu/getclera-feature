@@ -99,7 +99,7 @@ clera-match-explorer/
     evaluation/                   # Cases, measured results, known limitations
 ```
 
-T01 created documentation, directories, and initial interfaces. T02 added the runtime and application shell. T03 adds Zod schemas, inferred shared types, a validated fixture loader, one fictional role, 25 fictional profiles, and documented expected outcomes. Route handlers, dashboard components, and evaluators are added by their assigned tasks; empty directories are preserved with `.gitkeep`.
+T01 created documentation, directories, and initial interfaces. T02 added the runtime and application shell. T03 added Zod schemas, inferred shared types, a fixture loader, fictional data, and expected outcomes. T04 adds pure individual constraint evaluators and their integration with both matching directions. Aggregation, route handlers, and dashboard components are added by their assigned tasks; empty directories are preserved with `.gitkeep`.
 
 ## 8. Low-level domain design
 
@@ -126,6 +126,8 @@ Every requirement has a stable ID, kind, employer/candidate direction, mandatory
 ## 9. Constraint evaluation algorithms
 
 Each evaluator is pure: identical validated input produces identical output and does not access the network, storage, model, or current clock.
+
+T04 implementation details and current model limits are recorded in `docs/decisions/001-constraint-evaluation.md`. Checks retain evidence objects whose source IDs and UTF-16 offsets identify supporting spans. Work-mode and geographic restrictions remain independent checks. Candidate start preferences remain unknown until an offered role start date is modeled; a role deadline alone is insufficient.
 
 ### Skills
 

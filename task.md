@@ -37,11 +37,12 @@ Status legend: `[x]` complete; `[ ]` pending. Complete tasks only when their acc
 ## Phase 2: Matching engine
 
 ### T04 — Implement individual constraint evaluators
-- [ ] Add salary interval overlap, work policy, location, skills, and availability checks.
-- [ ] Evaluate both employer requirements and candidate preferences.
-- [ ] Return pass/fail/unknown with structured reasons and evidence IDs.
-- [ ] Distinguish absent information from explicit incompatibility; implement exact skill aliases only.
+- [x] Add salary interval overlap, work policy, location, skills, and availability checks.
+- [x] Evaluate both employer requirements and candidate preferences.
+- [x] Return pass/fail/unknown with structured reasons and evidence IDs.
+- [x] Distinguish absent information from explicit incompatibility; implement exact skill aliases only.
 - Acceptance: boundary tests cover equality, explicit rejection, missing facts, missing units, and unsupported work policies.
+- Verification: lint, typecheck, all 152 tests across five files, and production build passed. Evidence references retain source IDs and UTF-16 spans. Tests cover selected checks for all 25 profiles, both directions, salary/date equality, independent blockers, unknown facts/units, aliases, hybrid ambiguity, and remote geography. Current model limits are documented in `docs/decisions/001-constraint-evaluation.md`; eligibility aggregation remains T05.
 - Estimate: 2 hours. Dependencies: T03.
 
 ### T05 — Implement eligibility, ranking, and explanations

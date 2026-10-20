@@ -78,13 +78,14 @@ Status legend: `[x]` complete; `[ ]` pending. Complete tasks only when their acc
 ## Phase 4: AI-assisted input
 
 ### T08 — Build grounded job-description extraction
-- [ ] Choose provider and server-only configuration; document actual environment variables.
-- [ ] Add request/output validation and input length limits.
-- [ ] Extract requirements with exact evidence quotes; resolve and verify source spans in code.
-- [ ] Treat the pasted description as data; do not execute instructions within it.
-- [ ] Return warnings for ambiguous quotes, inferred importance, unsupported fields, or missing salary units.
-- [ ] Add timeout handling, safe errors, and a bounded retry policy.
+- [x] Choose provider and server-only configuration; document actual environment variables.
+- [x] Add request/output validation and input length limits.
+- [x] Extract requirements with exact evidence quotes; resolve and verify source spans in code.
+- [x] Treat the pasted description as data; do not execute instructions within it.
+- [x] Return warnings for ambiguous quotes, inferred importance, unsupported fields, or missing salary units.
+- [x] Add timeout handling, safe errors, and a bounded retry policy.
 - Acceptance: unsupported claims are rejected/flagged; no secret reaches client code; failed extraction preserves user text; seeded demo remains available.
+- Verification: independent review and fixes, lint, typecheck, all 282 unit/integration tests, production build and ten desktop/mobile Playwright cases passed. Mock transport covers retry/cancellation/body budgets; real no-key route returns safe validation/configuration errors. Signed salary and explicit exclusion regressions pass. Client assets contain no test key/provider environment names. Live provider quality/access/latency NOT RUN without credentials; human draft review remains required. See `docs/progress/T08.md`.
 - Estimate: 2–3 hours. Dependencies: T03 and T07.
 
 ### T09 — Add extraction review and confirmation

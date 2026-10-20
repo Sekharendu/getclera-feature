@@ -70,7 +70,7 @@ export default function Dashboard({ fixtures }: { fixtures: FixtureDataset }) {
         </section>
       </div>
     </main>
-    <footer>Independent portfolio project. Not affiliated with Clera. Fictional profiles only. Local changes stay in your browser.</footer>
+    <footer>Independent portfolio project. Not affiliated with Clera. Fictional profiles only. Matching and scenarios run locally in your browser. Requesting extraction sends pasted text to the app server and configured OpenAI provider.</footer>
     {selectedMatch && <CandidateDetail key={selectedMatch.candidateId} role={evaluation.role} candidate={candidatesById.get(selectedMatch.candidateId)!} match={selectedMatch} baseline={baseline.find((match) => match.candidateId === selectedMatch.candidateId)!} changedIds={details.comparison.changedChecks[selectedMatch.candidateId] ?? []} onClose={() => setSelected(null)} />}
   </div>;
 }
